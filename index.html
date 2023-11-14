@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="menu-deroulant-responsive.css">
-	<title>Menu responsive déroulant HTML / CSS </title>
-</head>
-<body>
-	<nav>
-		<label for="menu-mobile" class="menu-mobile">Menu</label>
-		<input type="checkbox" id="menu-mobile" role="button">
-		<ul>
-			<li class="menu-html"><a href="#">HTML & CSS</a>
-				<ul class="submenu">
-					<li><a href="#">Cours HTML et CSS</a></li>
-					<li><a href="#">Elément HTML</a></li>
-					<li><a href="#">Attributs HTML</a></li>
-					<li><a href="#">Exercices</a></li>
-				</ul>
-			</li>
-			<li class="menu-js"><a href="#">JavaScript</a>
-				<ul class="submenu">
-					<li><a href="tp6.html">TP6</a></li>
-					<li><a href="tp7.html">TP7</a></li>
-					<li><a href="tp9.html">TP9</a></li>
-				</ul>
-			</li>
-			<li class="menu-bases"><a href="#">Bases de données</a></li>
-			
-			<li class="menu-php"><a href="#">PHP</a></li>
-			
-			<li class="menu-missions"><a href="#">Missions</a>
-				<ul class="submenu">
-					<li><a href="mission1.html">Mission 1</a></li>
-					<li><a href="mission2.html">Mission 2</a></li>
-				</ul>
-			</li>
-				<li class="menu-certifications"><a href="#">Certifications</a>
-				<ul class="submenu">
-					<li><a href="certification.html">Cybersécurité </a></li>
-					<li><a href="#">HTML & CSS</a></li>
-					<li><a href="#">JavaScript</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
+<html lang="en">
+    <body>
 
-</body>
+        Nom: <input type="text" name="t1" id="t1">
+        Âge: <input type="text" name="t2" id="t2">
+        <h2>Tableau Dynamique</h2>
+        <table id="myTable" bgcolor="pink" border="1px" width="50%"></table>
+        >
+            <tr>
+                <td>Nom</td>
+                <td>Âge</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>25</td>
+            </tr>
+        </table>
+        <button onclick="ajouterLigne()">Ajouter une ligne</button>
+        
+        <script>
+            function ajouterLigne(){
+                var a= document.getElementById("t1").value;
+                var b= document.getElementById("t2").value;
+                if (a=="" || b=="")
+                    alert("un ou 2 champs vide");
+                else if (( Number(b)<10) || (Number (b)>20))
+                    {alert("l'age n'est pas valide");}
+                else
+                {
+                    var table = document.getElementById("myTable");
+                    var newRow = table.insertRow(-1);
+                    var cell1 = newRow.insertCell(0);
+                    var cell2 = newRow.insertCell(1);
+                    cell1.innerHTML = document.getElementById("t1").value;
+                    cell2.innerHTML = document.getElementById("t2").value;
+                }
+                
+                
+            }
+            
+        </script>
+    </body>
 </html>
