@@ -55,4 +55,20 @@ function swich(){
         default : alert("couleur non définie");
     }
 }
-        
+        function seconnecter3(){
+    var i = 0;
+    do{
+        var id=prompt("entrez votre nom d'utilisateur");
+        var mdp= prompt("entrez votre mot de passe");
+        if(id == "admin" && mdp == "admin")
+        {
+            document.write('Bienvenue${id}');
+            break;
+         } 
+         else 
+            alert("Accès refusé ");
+        i +=1;
+    }
+    while (i<3);
+    alert("Delai dépassé");
+}
