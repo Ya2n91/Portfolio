@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <body>
+
+        Nom: <input type="text" name="t1" id="t1">
+        Âge: <input type="text" name="t2" id="t2">
         <h2>Tableau Dynamique</h2>
-        <table id="myTable">
+        <table id="myTable" bgcolor="pink" border="1px" width="50%"></table>
+        >
             <tr>
                 <td>Nom</td>
                 <td>Âge</td>
@@ -17,20 +21,28 @@
             </tr>
         </table>
         <button onclick="ajouterLigne()">Ajouter une ligne</button>
+        
         <script>
             function ajouterLigne(){
-                var table = document.getElementById("myTable");
-                var name = prompt ("Donnez votre nom:");
-                var age = prompt ("Donnez votre age:");
-                var newRow = table.insertRow(-1);
-                var cell1 = newRow.insertCell(0);
-                var cell2 = newRow.insertCell(1);
-                cell1.innerHTML = name;
-                cell2.innerHTML = age;
-                if (age<10){
-                    document.write("Âge invalide");
+                var a= document.getElementById("t1").value;
+                var b= document.getElementById("t2").value;
+                if (a=="" || b=="")
+                    alert("un ou 2 champs vide");
+                else if (( Number(b)<10) || (Number (b)>20))
+                    {alert("l'age n'est pas valide");}
+                else
+                {
+                    var table = document.getElementById("myTable");
+                    var newRow = table.insertRow(-1);
+                    var cell1 = newRow.insertCell(0);
+                    var cell2 = newRow.insertCell(1);
+                    cell1.innerHTML = document.getElementById("t1").value;
+                    cell2.innerHTML = document.getElementById("t2").value;
                 }
+                
+                
             }
+            
         </script>
     </body>
 </html>
